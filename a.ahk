@@ -40,6 +40,18 @@ capslock & w::send, ^w
 capslock & t::send, ^t
 capslock & p::send, ^+{tab}
 capslock & n::send, ^{tab}
+;for excel
+#ifwinactive ahk_class XLMAIN
+    capslock & p::send, ^{pgup}
+    capslock & n::send, ^{pgdn}
+    !enter::send {f2}
+#ifwinactive
+;for putty
+#ifwinactive ahk_class PuTTY
+    capslock & p::send, ^{pgup}
+    capslock & n::send, ^{pgdn}
+    capslock & w::send, ^d
+#ifwinactive
 
 !q::send, {esc}
 !/::send, !{f4}
