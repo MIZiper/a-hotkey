@@ -38,18 +38,19 @@ capslock & `;::send, ^{backspace}
 !.::send, !{right}
 capslock & w::send, ^w
 capslock & t::send, ^t
-capslock & p::send, ^+{tab}
-capslock & n::send, ^{tab}
+capslock & p::send, ^{pgup}
+capslock & n::send, ^{pgdn}
+;For IE, many apps with tabs use ctrl-pgup/pgdn to switch
+#ifwinactive ahk_class IEFrame
+    capslock & p::send, ^+{tab}
+    capslock & n::send, ^{tab}
+#ifwinactive
 ;for excel
 #ifwinactive ahk_class XLMAIN
-    capslock & p::send, ^{pgup}
-    capslock & n::send, ^{pgdn}
     !enter::send {f2}
 #ifwinactive
 ;for putty
 #ifwinactive ahk_class PuTTY
-    capslock & p::send, ^{pgup}
-    capslock & n::send, ^{pgdn}
     capslock & w::send, ^d
 #ifwinactive
 
