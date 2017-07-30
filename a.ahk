@@ -52,6 +52,9 @@ capslock & n::send, ^{pgdn}
 ;for putty
 #ifwinactive ahk_class PuTTY
     capslock & w::send, ^d
+    capslock & `;::send, !{backspace}
+    !f::send, !{right}
+    !b::send, !{left}
 #ifwinactive
 
 !q::send, {esc}
