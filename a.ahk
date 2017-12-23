@@ -1,4 +1,7 @@
-;y/w/t/
+;y/t/
+
+;for vscode, switch between editor group
+!w::send, ^k^{left}
 
 !h::send, {left}
 !l::send, {right}
@@ -19,7 +22,7 @@
 !`;::send, {backspace}
 capslock & `;::send, ^{backspace}
 !d::send, {end}{shift down}{home}{shift up}{del}
-!enter::send, {end}{enter}
++enter::send, {f2}
 !+enter::send, {home}{enter}{up}
 
 !p::send, {pgup}
@@ -46,8 +49,8 @@ capslock & n::send, ^{pgdn}
     capslock & n::send, ^{tab}
 #ifwinactive
 ;for excel
-#ifwinactive ahk_class XLMAIN
-    !enter::send {f2}
+#ifwinnotactive ahk_class XLMAIN
+    !enter::send, {end}{enter}
 #ifwinactive
 ;for putty
 #ifwinactive ahk_class PuTTY
