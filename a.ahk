@@ -22,7 +22,6 @@
 !`;::send, {backspace}
 capslock & `;::send, ^{backspace}
 !d::send, {end}{shift down}{home}{shift up}{del}
-+enter::send, {f2}
 !+enter::send, {home}{enter}{up}
 
 !p::send, {pgup}
@@ -43,6 +42,9 @@ capslock & w::send, ^w
 capslock & t::send, ^t
 capslock & p::send, ^{pgup}
 capslock & n::send, ^{pgdn}
+capslock & m::send, +{f10}
+capslock & enter:: send, {f2}
+
 ;For IE, many apps with tabs use ctrl-pgup/pgdn to switch
 #ifwinactive ahk_class IEFrame
     capslock & p::send, ^+{tab}
@@ -51,7 +53,9 @@ capslock & n::send, ^{pgdn}
 ;for excel
 #ifwinnotactive ahk_class XLMAIN
     !enter::send, {end}{enter}
-#ifwinactive
+#ifwinnotactive
+
+#ifwinactive ahk_class 
 ;for putty
 #ifwinactive ahk_class PuTTY
     capslock & w::send, ^d
