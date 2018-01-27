@@ -55,7 +55,6 @@ capslock & enter:: send, {f2}
     !enter::send, {end}{enter}
 #ifwinnotactive
 
-#ifwinactive ahk_class 
 ;for putty
 #ifwinactive ahk_class PuTTY
     capslock & w::send, ^d
