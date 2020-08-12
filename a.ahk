@@ -1,4 +1,3 @@
-;y/t/
 
 ;for vscode, switch between editor group
 !w::send, ^k^{left}
@@ -17,12 +16,14 @@
 !+k::send, +{up}
 !b::send, ^{left}
 !f::send, ^{right}
+!t::send, ^a
 
 !u::send, {del}
 !`;::send, {backspace}
 capslock & `;::send, ^{backspace}
 !d::send, {end}{shift down}{home}{shift up}{del}
 !+enter::send, {home}{enter}{up}
+!y::send, {end}{shift down}{home}{shift up}^c
 
 !p::send, {pgup}
 !n::send, {pgdn}
@@ -72,7 +73,8 @@ capslock & enter:: send, {f2}
     ifequal s, 1, winrestore, A
     ifequal s, 0, winmaximize, A
 return
-!i:: winminimize, A
+!+o:: send, #+{up}
+!i:: winrestore, A
 
 capslock & h::send, #^{left}
 capslock & l::send, #^{right}
@@ -83,6 +85,7 @@ capslock & k::send, #^d
 !2::run, explorer.exe
 !3::run, notepad.exe
 !4::run, mspaint.exe
+!5::run, calc.exe
 
 capslock & s::
     wingetpos, x, y, w, h, a
