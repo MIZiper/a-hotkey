@@ -74,7 +74,8 @@ capslock & enter:: send, {f2}
     ifequal s, 0, winmaximize, A
 return
 !+o:: send, #+{up}
-!i:: winrestore, A
+!i:: winminimize, A
+!+i:: winrestore, A
 
 capslock & h::send, #^{left}
 capslock & l::send, #^{right}
