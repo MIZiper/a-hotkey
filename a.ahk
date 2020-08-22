@@ -24,6 +24,7 @@ capslock & `;::send, ^{backspace}
 !d::send, {end}{shift down}{home}{shift up}{del}
 !+enter::send, {home}{enter}{up}
 !y::send, {end}{shift down}{home}{shift up}^c
+!+y::send, {end}{shift down}{home}{shift up}^c{backspace}
 
 !p::send, {pgup}
 !n::send, {pgdn}
